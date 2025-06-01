@@ -1,0 +1,588 @@
+/* General Body Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    background-color: #eef1f5; /* Light grey-blue background */
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-size: 16px;
+}
+
+#app {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+/* Header Styles */
+header {
+    background: linear-gradient(135deg, #0052A5, #003366); /* Hitech blue gradient */
+    color: white;
+    padding: 1.25em 1em;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2em;
+    font-weight: 600;
+}
+
+/* Navigation Styles */
+nav {
+    background-color: #004080; /* Slightly darker than header's base */
+    padding: 0.75em 0;
+    text-align: center;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+nav button {
+    background-color: transparent;
+    color: white;
+    border: none;
+    padding: 0.8em 1.8em;
+    margin: 0 0.3em;
+    cursor: pointer;
+    font-size: 1em;
+    border-radius: 20px; /* Pill shape */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-weight: 500;
+}
+
+nav button:hover {
+    background-color: #007bff; /* Brighter blue for hover */
+    color: #fff;
+}
+
+nav button.active {
+    background-color: #ffffff; /* White background for active */
+    color: #0052A5; /* Hitech blue text */
+    font-weight: 600;
+}
+
+/* Main Content Area */
+main {
+    flex-grow: 1;
+    padding: 25px;
+    max-width: 1300px;
+    margin: 25px auto;
+    width: 90%;
+    background-color: #fff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    border-radius: 10px;
+}
+
+/* Footer Styles */
+footer {
+    background-color: #343a40; /* Dark grey */
+    color: #f8f9fa; /* Light text */
+    text-align: center;
+    padding: 1.25em 0;
+    margin-top: auto; /* Pushes footer to bottom */
+    font-size: 0.9em;
+}
+
+/* Form and List Container Styles */
+.form-container, .list-container {
+    margin-bottom: 35px;
+}
+
+.form-container h2, .list-container h2 {
+    color: #0052A5; /* Hitech blue */
+    border-bottom: 3px solid #007bff; /* Brighter blue accent */
+    padding-bottom: 12px;
+    margin-bottom: 25px;
+    font-size: 1.6em;
+    font-weight: 600;
+}
+
+/* Form Group Styling */
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #495057; /* Darker grey for labels */
+}
+
+.form-group input[type="text"],
+.form-group input[type="number"],
+.form-group input[type="tel"],
+.form-group input[type="date"],
+.form-group textarea,
+.form-group select {
+    width: calc(100% - 24px); /* Full width minus padding */
+    padding: 12px;
+    border: 1px solid #ced4da; /* Standard input border */
+    border-radius: 5px;
+    font-size: 1em;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+}
+
+
+.form-group input[type="text"]:focus,
+.form-group input[type="number"]:focus,
+.form-group input[type="tel"]:focus,
+.form-group input[type="date"]:focus,
+.form-group textarea:focus,
+.form-group select:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 0.2rem rgba(0,123,255,.25);
+    outline: none;
+}
+
+.form-group input[readonly],
+.form-group select[disabled] {
+    background-color: #e9ecef;
+    opacity: 1; /* Ensure text is readable */
+}
+
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 90px;
+}
+
+/* Material Item Styling in Forms */
+.material-item {
+    border: 1px solid #e0e0e0;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 6px;
+    background-color: #f9fafb; /* Very light grey */
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+.material-item h4 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #0059b3; /* Slightly darker blue for subheadings */
+    font-size: 1.1em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.material-item h4 .badge { /* For dispatched qty badge in form */
+    font-size: 0.8em;
+    padding: 0.3em 0.6em;
+}
+
+
+.item-calculations {
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px dashed #ddd;
+    font-size: 0.95em;
+}
+.item-calculations p {
+    margin: 5px 0;
+    color: #555;
+}
+.item-calculations p strong {
+    color: #333;
+}
+
+
+/* Button Styles */
+button, input[type="submit"] {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-weight: 500;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    text-decoration: none; /* For anchor tags styled as buttons */
+    display: inline-block; /* For anchor tags */
+    margin-right: 8px; /* Spacing between buttons */
+    margin-bottom: 5px; /* Spacing for wrapped buttons */
+}
+button:active, input[type="submit"]:active {
+    transform: translateY(1px);
+}
+
+
+button.primary, input[type="submit"].primary {
+    background-color: #28a745; /* Green for primary actions */
+    color: white;
+}
+button.primary:hover, input[type="submit"].primary:hover {
+    background-color: #218838; /* Darker green */
+}
+
+button.secondary {
+    background-color: #6c757d; /* Grey for secondary actions */
+    color: white;
+}
+button.secondary:hover {
+    background-color: #5a6268; /* Darker grey */
+}
+
+button.danger {
+    background-color: #dc3545; /* Red for destructive actions */
+    color: white;
+}
+button.danger:hover {
+    background-color: #c82333; /* Darker red */
+}
+
+button.info {
+    background-color: #17a2b8; /* Teal for info */
+    color: white;
+}
+button.info:hover {
+    background-color: #138496; /* Darker teal */
+}
+
+button.small {
+    padding: 5px 10px;
+    font-size: 0.85em;
+}
+
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 25px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    border-radius: 6px;
+    overflow: hidden; /* For border-radius on table */
+}
+
+th, td {
+    border: 1px solid #dee2e6; /* Lighter border for table cells */
+    padding: 14px;
+    text-align: left;
+    vertical-align: middle;
+}
+
+th {
+    background-color: #f0f3f7; /* Light blue-grey for table headers */
+    color: #343a40; /* Dark text for headers */
+    font-weight: 600;
+    font-size: 0.95em;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+tr:nth-child(even) {
+    background-color: #f8f9fa; /* Zebra striping for rows */
+}
+tr:hover {
+    background-color: #e9ecef; /* Hover effect for rows */
+}
+
+.actions-column button {
+    margin-right: 6px;
+    padding: 6px 10px;
+    font-size: 0.9em;
+}
+.actions-column button:last-child {
+    margin-right: 0;
+}
+
+
+/* PO Details Table (within modal or detail view) */
+.po-details-table {
+    margin-top: 15px;
+    font-size: 0.95em;
+}
+.po-details-table th, .po-details-table td {
+    padding: 10px;
+}
+.po-details-table th {
+    background-color: #e9ecef; /* Slightly different header for nested tables */
+}
+.po-details-table ul {
+    margin: 0;
+    padding-left: 15px;
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1050; /* High z-index */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto; /* Allow modal content to scroll */
+    background-color: rgba(0,0,0,0.6); /* Darker overlay */
+    padding-top: 30px; /* Space from top */
+    padding-bottom: 30px; /* Space from bottom, helps with scrolling */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 2% auto; /* Reduced top margin for scroll */
+    padding: 25px 30px;
+    border: 1px solid #888;
+    width: 85%;
+    max-width: 700px; /* Max width for larger modals */
+    border-radius: 8px;
+    position: relative;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    animation: slideIn 0.3s ease-out;
+}
+.modal-content.large {
+    max-width: 900px; /* For PO Details */
+}
+
+
+@keyframes slideIn {
+    from {transform: translateY(-30px); opacity: 0;}
+    to {transform: translateY(0); opacity: 1;}
+}
+
+.modal-header {
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.modal-header h2 {
+    margin: 0;
+    color: #0052A5; /* Hitech blue */
+    font-size: 1.5em;
+}
+
+.close-button {
+    color: #777;
+    font-size: 32px;
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #333;
+    text-decoration: none;
+}
+
+/* Status Badges */
+.badge {
+    padding: 0.4em 0.8em;
+    font-size: 0.85em;
+    font-weight: 600;
+    border-radius: 10px; /* More rounded badges */
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    vertical-align: middle;
+}
+.badge-pending { background-color: #ffc107; color: #212529;} /* Yellow */
+.badge-partial { background-color: #17a2b8; } /* Teal */
+.badge-completed { background-color: #28a745; } /* Green */
+.badge-cancelled { background-color: #6c757d; } /* Grey for Cancelled */
+.badge-info-light { background-color: #e6f7ff; color: #0052A5; border: 1px solid #0052A5;} /* Light blue for info like dispatched qty */
+
+
+/* Error Messages */
+.error-message {
+    color: #dc3545; /* Red for errors */
+    font-size: 0.9em;
+    margin-top: 5px;
+}
+.error-text {
+    color: #dc3545 !important; /* Red for errors on labels */
+    font-weight: bold;
+}
+
+
+/* Utility Classes */
+.text-right {
+    text-align: right !important; /* Ensure override if other text-aligns exist */
+}
+.text-danger {
+    color: #dc3545 !important; /* Bootstrap's danger color */
+    font-weight: bold;
+}
+.mt-1 { margin-top: 0.5rem; }
+.mt-2 { margin-top: 1rem; }
+.mb-1 { margin-bottom: 0.5rem; }
+.mb-2 { margin-bottom: 1rem; }
+
+
+/* Dispatch Summary Tables */
+.dispatch-summary-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.summary-table-wrapper {
+    flex: 1 1 45%; /* Grow, shrink, and basis for side-by-side */
+    min-width: 300px; /* Prevent tables from getting too squished */
+    margin-bottom: 25px;
+    padding: 0 10px; /* Add some horizontal spacing between tables if they wrap */
+}
+
+.summary-table-wrapper h3 {
+    color: #0059b3; /* Hitech blue for summary titles */
+    font-size: 1.3em;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 8px;
+}
+
+.summary-table-wrapper table {
+    font-size: 0.9em; /* Slightly smaller font for summary tables */
+}
+.summary-table-wrapper th, .summary-table-wrapper td {
+    padding: 10px 12px;
+}
+
+/* Responsive Table Wrapper */
+.table-responsive-wrapper {
+    overflow-x: auto;
+    width: 100%;
+    -webkit-overflow-scrolling: touch; /* Momentum scrolling on iOS */
+    margin-bottom: 1rem; /* Space below scrollable tables */
+}
+
+
+/* Responsive Design Adjustments */
+@media (max-width: 992px) {
+    main {
+        width: 95%;
+    }
+    .modal-content, .modal-content.large {
+        width: 90%;
+        max-width: 90%;
+    }
+    /* Reduce padding for table cells on smaller screens to accommodate more columns */
+    th, td {
+        padding: 10px 8px;
+        font-size: 0.9em;
+    }
+    .summary-table-wrapper {
+        flex-basis: 100%; /* Stack summary tables on smaller screens */
+        margin-bottom: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.6em;
+    }
+    nav button {
+        padding: 0.7em 1.2em;
+        font-size: 0.9em;
+        margin: 0.2em;
+    }
+    .form-group input[type="text"],
+    .form-group input[type="number"],
+    .form-group input[type="tel"],
+    .form-group input[type="date"],
+    .form-group textarea,
+    .form-group select {
+        width: calc(100% - 20px); /* Adjust padding */
+        padding: 10px;
+    }
+    th, td {
+        padding: 8px 5px; /* Further reduce padding */
+        font-size: 0.85em; /* Slightly smaller font for table content */
+    }
+    .actions-column {
+        white-space: normal; /* Allow button wrapping if necessary */
+    }
+    .actions-column button {
+        display: inline-block; /* Keep buttons inline if space allows */
+        margin-bottom: 5px;
+        width: auto; /* Auto width for buttons */
+    }
+    .modal-content, .modal-content.large {
+        margin: 5% auto; /* Adjust margin */
+        padding: 20px;
+    }
+    .modal-header h2 {
+        font-size: 1.3em;
+    }
+    .summary-table-wrapper h3 {
+        font-size: 1.2em;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1.3em;
+    }
+    nav {
+        display: flex;
+        flex-direction: column;
+    }
+    nav button {
+        width: 80%;
+        margin: 0.3em auto;
+    }
+    main {
+        padding: 15px;
+    }
+    .form-container h2, .list-container h2 {
+        font-size: 1.4em;
+    }
+    button, input[type="submit"] {
+        font-size: 0.95em;
+        padding: 9px 15px;
+        width: 100%; /* Make buttons full width for easier tapping */
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+    button:last-child, input[type="submit"]:last-child {
+        margin-bottom: 0;
+    }
+    nav button { /* Keep nav buttons less wide */
+         width: 80%;
+    }
+    .actions-column button { /* Keep action buttons smaller */
+        width: auto;
+        padding: 6px 10px;
+    }
+
+
+    th, td {
+        font-size: 0.8em; /* Even smaller font for very small screens */
+        padding: 6px 3px;
+    }
+    /* Consider making table display block for very small screens if horizontal scroll is not desired */
+}
+
+/* Style for material dispatch items in modal */
+.material-dispatch-item {
+    border: 1px solid #eee;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    background-color: #fdfdfd;
+}
+.material-dispatch-item label {
+    font-weight: normal;
+    color: #333;
+    font-size: 0.9em;
+}
+.material-dispatch-item input[type="number"] {
+    /* width: 100px; /* Original */
+    min-width: 80px; /* Ensure it's not too small */
+    max-width: 150px; /* Prevent it from becoming excessively wide */
+    flex-grow: 0; /* Don't let it grow excessively if in a flex row */
+    padding: 8px; /* Adjust padding for smaller input */
+    margin-top: 5px;
+    box-sizing: border-box; /* Ensure padding doesn't add to width in a way that breaks layout */
+}

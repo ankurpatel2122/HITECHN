@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HITECH CHEMPLAST - PO Management</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#0052A5">
+    <link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTkyIiBoZWlnaHQ9IjE5MiIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTkyIiBoZWlnaHQ9IjE5MiIgZmlsbD0iIzAwNTJBNSIvPjwvc3ZnPg==">
+<link rel="stylesheet" href="/index.css">
+</head>
+<body>
+    <div id="app">
+        <header>
+            <h1>HITECH CHEMPLAST CORPORATION</h1>
+            <nav id="navbar"></nav>
+        </header>
+        <main id="main-content">
+            <!-- Content will be rendered here by TypeScript -->
+        </main>
+        <footer>
+            <p>&copy; 2024 HITECH CHEMPLAST CORPORATION. All rights reserved.</p>
+        </footer>
+    </div>
+    <script type="module" src="index.tsx"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./service-worker.js')
+                    .then(registration => {
+                        console.log('ServiceWorker registration successful with scope: ', registration.scope);
+                    })
+                    .catch(error => {
+                        console.log('ServiceWorker registration failed: ', error);
+                    });
+            });
+        }
+    </script>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
